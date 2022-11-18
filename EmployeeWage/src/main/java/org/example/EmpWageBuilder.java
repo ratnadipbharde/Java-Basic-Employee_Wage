@@ -23,10 +23,21 @@ public class EmpWageBuilder {
     }
 
     int getDailyWage(double empCheck) {
-        if (empCheck == IS_FULL_TIME)
+       /* if (empCheck == IS_FULL_TIME)
             empHrs = 8;
         else if (empCheck == IS_PART_TIME)
-            empHrs = 4;
+            empHrs = 4; */
+        //using Switch Statement
+        switch ((int) empCheck) {
+            case IS_FULL_TIME:
+                empHrs = 8;
+                break;
+            case IS_PART_TIME:
+                empHrs = 4;
+                break;
+            default:
+                empHrs= 0;
+        }
         empWage = empHrs * EMP_RATE_PER_HOUR;
         return empWage;
     }
